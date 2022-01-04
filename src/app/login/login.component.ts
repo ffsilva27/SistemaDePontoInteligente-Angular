@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AnimationDurations } from '@angular/material/core';
 import { LoginService } from './login.service';
 
 
@@ -34,7 +33,23 @@ export class LoginComponent implements OnInit {
     }
     this.login.login = this.form.value;
     this.login.logar().subscribe(data=>{
-      console.log(JSON.stringify(data))
-    });
+      localStorage.setItem('token', data.data.token);
+      //O comando 'atob' serve para decodificar o token que esta em Base64.
+      const usuarioData = JSON.parse(atob(data.data.token.split('.')[1]));
+      if(usuarioData.role=='ROLE_ADMIN'){
+        alert('Deve redirecionar para a página ADMIN.')
+      }else{
+        alert("Deve redirecionar para a página de funcionário.")
+      }
+    },
+    err=> {
+      console.log(JSON.stringify(err));
+      let msg: string = "Tente novamente em instantes";
+      if(err.status==401){
+        msg = "Email/senha inválido(s)."
+      }
+      this.snackBar.open(msg,"Erro",{duration:5000});
+    }
+    );
   }
 }

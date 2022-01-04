@@ -14,13 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CadastrarPjComponent } from './cadastrar-pj/cadastrar-pj.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrarPjComponent
   ],
   imports: [
     BrowserModule,
