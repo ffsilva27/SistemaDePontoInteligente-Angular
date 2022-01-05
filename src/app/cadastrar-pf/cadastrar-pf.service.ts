@@ -30,7 +30,7 @@ export class CadastrarPfService {
     cnpj: ''
   }
 
-  cadastro(): Observable<any>{
+  cadastrar(): Observable<any>{
     return this.httpClient.post(env.baseApiUrl+this.PATH, this.cadastroPf);
   }
 }

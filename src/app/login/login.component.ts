@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit {
       //O comando 'atob' serve para decodificar o token que esta em Base64.
       const usuarioData = JSON.parse(atob(data.data.token.split('.')[1]));
       if(usuarioData.role=='ROLE_ADMIN'){
-        alert('Deve redirecionar para a página ADMIN.')
+        this.router.navigate(['/admin']);
       }else{
-        alert("Deve redirecionar para a página de funcionário.")
+        this.router.navigate(['/funcionario']);
       }
     },
     err=> {

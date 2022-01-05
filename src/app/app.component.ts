@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Sistema-de-Ponto';
+  constructor(private router:Router){}
+
+  sair() {
+    delete localStorage['token'];
+    this.router.navigate(['/']);
+  }
+
+  autenticado():boolean {
+    return localStorage['token'];
+  }
 }

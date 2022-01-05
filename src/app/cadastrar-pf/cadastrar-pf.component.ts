@@ -15,7 +15,7 @@ export class CadastrarPfComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private router:Router, private cadastroPf: CadastrarPfService) { }
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private router:Router, private cadastrarPfservice: CadastrarPfService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -36,15 +36,13 @@ export class CadastrarPfComponent implements OnInit {
       this.snackBar.open("Dados inválidos ou incompletos!", "Error", {duration: 5000});
       return;
     }
-    this.cadastroPf.cadastroPf = this.form.value;
-    this.cadastroPf.cadastro().subscribe(data => {
-      console.log(data);
+    this.cadastrarPfservice.cadastroPf = this.form.value;
+    this.cadastrarPfservice.cadastrar().subscribe(data => {
       const msg: string = "Cadastro efetuado com sucesso! Realize o login para acessar o sistema.";
       this.snackBar.open(msg, "Sucesso", {duration:5000});
       this.router.navigate(['/login']);
     },
     err => {
-      console.log(err);
       let msg: string = "Tente novamente em instantes."
       if(err.status == 400) {
         msg = err.error.errors.join(' ');

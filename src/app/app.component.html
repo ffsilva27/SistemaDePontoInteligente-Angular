@@ -1,1 +1,9 @@
+<mat-toolbar color="primary">
+    <span>Sistema de Ponto Inteligente</span>
+    <span class="toolbar-spacer"></span>
+    <a (click)="sair()" style="cursor: pointer;" alt="Sair" title="Sair" *ngIf="autenticado()">
+    <mat-icon class="toolbar-icon" matTooltip="Sair">logout</mat-icon>
+    </a>
+</mat-toolbar>
+
 <router-outlet></router-outlet>

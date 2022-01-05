@@ -17,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CadastrarPjComponent } from './cadastrar-pj/cadastrar-pj.component';
 import { MascaraDirective } from './shared/mascara.directive';
 import { CadastrarPfComponent } from './cadastrar-pf/cadastrar-pf.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -42,7 +43,8 @@ import { CadastrarPfComponent } from './cadastrar-pf/cadastrar-pf.component';
     MatTooltipModule,
     MatIconModule,
     MatSnackBarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
