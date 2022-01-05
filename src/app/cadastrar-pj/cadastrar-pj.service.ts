@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment as env } from 'src/environments/environment';
 
 export interface cadastroPjInfo {
   id?: string,
@@ -15,7 +18,9 @@ export interface cadastroPjInfo {
 })
 export class CadastrarPjService {
 
-  constructor() { }
+  private readonly PATH: string = 'cadastrar-pj';
+
+  constructor(private http: HttpClient) { }
 
   cadastroPj: cadastroPjInfo = {
     id:'',
@@ -26,5 +31,10 @@ export class CadastrarPjService {
     razaoSocial:'',
     cnpj:''
   };
+
+  cadastrar(): Observable<any> {
+    return this.http.post(env.baseApiUrl + this.PATH, this.cadastroPj);
+  }
+
 
 }

@@ -1,15 +1,10 @@
-<h2 fxLayoutAlign="center">Cadastro de Pessoa Jurídica</h2>
+<h2 fxLayoutAlign="center">Cadastro de Pessoa Física</h2>
 
-<form [formGroup]='form' fxLayoutAlign="center" novalidate>
+<form [formGroup]="form" novalidate fxLayoutAlign="center">
     <mat-list>
         <mat-list-item>
             <mat-form-field>
                 <input matInput placeholder="CNPJ" formControlName="cnpj" mascara="99.999.999/9999-99">
-            </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
-            <mat-form-field>
-                <input matInput placeholder="Razão Social" formControlName="razaoSocial">
             </mat-form-field>
         </mat-list-item>
         <mat-list-item>
@@ -24,7 +19,7 @@
         </mat-list-item>
         <mat-list-item>
             <mat-form-field>
-                <input matInput placeholder="E-Mail" formControlName="email">
+                <input matInput placeholder="Email" formControlName="email">
             </mat-form-field>
         </mat-list-item>
         <mat-list-item>
@@ -36,8 +31,8 @@
             </span>
         </mat-list-item>
         <mat-list-item fxLayoutAlign="center">
-            <button mat-raised-button color="primary" (click)="cadastrarPj()" >Cadastrar</button>
-            <a mat-raised-button routerLink='/login'>voltar</a>
+            <button mat-raised-button color="primary" (click)='cadastrarPf()'>Cadastrar</button>
+            <a mat-raised-button routerLink="/login">Voltar</a>
         </mat-list-item>
     </mat-list>
 </form>

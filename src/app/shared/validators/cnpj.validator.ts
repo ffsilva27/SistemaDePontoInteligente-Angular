@@ -12,9 +12,9 @@ export class CnpjValidator {
     static cnpjValido(cnpj: any): boolean {
                 
         cnpj = !cnpj || cnpj.replace(/\D/g, '');
-        let cnpjInvsRegex = /1{14}|2{14}|3{14}|4{14}|5{14}|6{14}|7{14}|8{14}|9{14}|0{14}/;
+        let cnpjsInvsRegex = /1{14}|2{14}|3{14}|4{14}|5{14}|6{14}|7{14}|8{14}|9{14}|0{14}/;
         
-        if (!cnpj || cnpj.length !== 14 || cnpjInvsRegex.test(cnpj)) {
+        if (!cnpj || cnpj.length !== 14 || cnpjsInvsRegex.test(cnpj)) {
             return false;
         } 
         
@@ -39,7 +39,7 @@ export class CnpjValidator {
         tamanho += 1;
         numeros = cnpj.substring(0, tamanho);
         soma = 0;
-        pos = tamanho;
+        pos = tamanho - 7;
 
         for (let i = tamanho; i >= 1 ; i--) {
             soma += numeros.charAt(tamanho - i) * pos--;

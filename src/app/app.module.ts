@@ -16,6 +16,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CadastrarPjComponent } from './cadastrar-pj/cadastrar-pj.component';
 import { MascaraDirective } from './shared/mascara.directive';
+import { CadastrarPfComponent } from './cadastrar-pf/cadastrar-pf.component';
 
 
 
@@ -25,7 +26,8 @@ import { MascaraDirective } from './shared/mascara.directive';
     AppComponent,
     LoginComponent,
     CadastrarPjComponent,
-    MascaraDirective
+    MascaraDirective,
+    CadastrarPfComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   logar(){
     if(this.form.invalid){
-      this.snackBar.open("Favor informar os dados ou preencher com dados válidos!", "Erro", {duration: 5000});
+      this.snackBar.open("Dados inválidos ou incompletos!", "Erro", {duration: 5000});
       return;
     }
     this.login.login = this.form.value;

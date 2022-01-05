@@ -33,11 +33,24 @@ export class CadastrarPjComponent implements OnInit {
 
   cadastrarPj(){
     if(this.form.invalid){
-      this.snackBar.open("Dados inválidos ou incompletos.", "Erro",{duration:5000});
+      this.snackBar.open("Dados inválidos ou incompletos!", "Erro",{duration:5000});
       return;
     }
     this.cadastroPj.cadastroPj = this.form.value;
-    alert(JSON.stringify(this.cadastroPj.cadastroPj));
+    this.cadastroPj.cadastrar().subscribe(data => {
+      const msg:string = "Cadastro efetuado com sucesso! Realize o login para acessar o sistema.";
+      this.snackBar.open(msg,"Sucesso",{duration: 5000});
+      this.router.navigate(['/login']);
+    },
+      err => {
+        let msg: string = "Tente novamente em instantes."
+        if(err.status == 400) {
+          msg = err.error.errors.join(' ');
+        }
+        this.snackBar.open(msg, "Erro", {duration:5000});
+      }
+    );
+      return false;
   };
 
 }
