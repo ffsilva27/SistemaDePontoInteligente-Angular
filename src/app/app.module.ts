@@ -18,6 +18,12 @@ import { CadastrarPjComponent } from './cadastrar-pj/cadastrar-pj.component';
 import { MascaraDirective } from './shared/mascara.directive';
 import { CadastrarPfComponent } from './cadastrar-pf/cadastrar-pf.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ListagemComponent } from './funcionario/listagem/listagem.component';
+import { LancamentoComponent } from './funcionario/lancamento/lancamento.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -29,6 +35,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CadastrarPjComponent,
     MascaraDirective,
     CadastrarPfComponent,
+    ListagemComponent,
+    LancamentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatSnackBarModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
