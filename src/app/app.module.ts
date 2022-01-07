@@ -27,7 +27,6 @@ import { MatCardModule } from '@angular/material/card';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +55,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
 
   ],
   providers: [],

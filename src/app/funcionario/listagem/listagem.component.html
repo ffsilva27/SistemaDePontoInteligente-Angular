@@ -1,3 +1,48 @@
 <h2 fxLayoutAlign="center">Controle de Ponto</h2>
+<a mat-button color="warn" routerLink="/funcionario">
+	Adicionar lançamento
+</a>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-<p>Listagem works</p>
+	<mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: colunas;"></mat-row>
+
+    <ng-container matColumnDef="data">
+      <mat-header-cell *matHeaderCellDef>
+        Data
+      </mat-header-cell>
+      <mat-cell *matCellDef="let lancamento">
+        {{ lancamento.data }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <mat-header-cell *matHeaderCellDef>
+        Tipo
+      </mat-header-cell>
+      <mat-cell *matCellDef="let lancamento">
+      	{{ lancamento.tipo }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="localizacao">
+      <mat-header-cell *matHeaderCellDef>
+      	Localização
+      </mat-header-cell>
+      <mat-cell *matCellDef="let lancamento">
+      	{{ lancamento.localizacao }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="geoLocalizacao">
+        <mat-header-cell *matHeaderCellDef>
+            Geo Localização
+        </mat-header-cell>
+        <mat-cell *matCellDef="let lancamento">
+            <a target="blank" [href]="obterUrlMapa(lancamento.localizacao)">
+                Abrir mapa
+            </a>
+        </mat-cell>
+      </ng-container>  
+
+</mat-table>
