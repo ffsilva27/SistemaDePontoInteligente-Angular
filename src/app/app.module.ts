@@ -28,6 +28,9 @@ import { MatCardModule } from '@angular/material/card';
 import { TradutorPaginator } from './shared/tradutor-paginator';
 import { TipoPipe } from './shared/tipo.pipe';
 import { DataPipe } from './shared/data.pipe';
+import { CadastroComponent } from './admin/cadastro/cadastro.component';
+import { ListagemAdminComponent } from './admin/listagem-admin/listagem-admin.component';
+import { AtualizacaoComponent } from './admin/atualizacao/atualizacao.component';
 
 
 
@@ -42,6 +45,9 @@ import { DataPipe } from './shared/data.pipe';
     LancamentoComponent,
     TipoPipe,
     DataPipe,
+    CadastroComponent,
+    ListagemAdminComponent,
+    AtualizacaoComponent,
   ],
   imports: [
     BrowserModule,

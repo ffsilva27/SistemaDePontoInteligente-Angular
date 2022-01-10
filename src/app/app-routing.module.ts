@@ -1,3 +1,6 @@
+import { AtualizacaoComponent } from './admin/atualizacao/atualizacao.component';
+import { CadastroComponent } from './admin/cadastro/cadastro.component';
+import { ListagemAdminComponent } from './admin/listagem-admin/listagem-admin.component';
 import { CadastrarPjComponent } from './cadastrar-pj/cadastrar-pj.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +16,9 @@ const routes: Routes = [
   {path:"cadastro-pf", component: CadastrarPfComponent},
   {path:"funcionario", component: LancamentoComponent},
   {path:"funcionario/listagem", component: ListagemComponent},
+  {path:"admin", component: ListagemAdminComponent},
+  {path:"admin/cadastro", component: CadastroComponent},
+  {path:"admin/atualizacao/:lancamentoId", component: AtualizacaoComponent}
 ];
 
 @NgModule({
