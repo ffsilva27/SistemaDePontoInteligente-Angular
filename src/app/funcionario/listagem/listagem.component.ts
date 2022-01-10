@@ -1,5 +1,5 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
 import { MatPaginator } from '@angular/material/paginator';
@@ -20,12 +20,17 @@ export class ListagemComponent implements OnInit {
   dataSource: MatTableDataSource<lancamentoInfo>;
   colunas: string[] = ['data', 'tipo', 'localizacao', 'geoLocalizacao'];
 
+  @ViewChild(MatSort) sort:MatSort;
+  @ViewChild(MatPaginator) matPaginator: MatPaginator;
+
   constructor(private lancamentoService: LancamentoService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.lancamentoService.listarTodosLancamentos().subscribe(data => {
       const lancamentos = data['data'] as lancamentoInfo[];
       this.dataSource = new MatTableDataSource<lancamentoInfo>(lancamentos);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.matPaginator;
     },
     err => {
       const msg: string = "Erro obtendo lancamentos!";

@@ -1,3 +1,4 @@
+import { MatPaginatorIntl } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { TradutorPaginator } from './shared/tradutor-paginator';
+import { TipoPipe } from './shared/tipo.pipe';
+import { DataPipe } from './shared/data.pipe';
 
 
 
@@ -36,6 +40,8 @@ import { MatCardModule } from '@angular/material/card';
     CadastrarPfComponent,
     ListagemComponent,
     LancamentoComponent,
+    TipoPipe,
+    DataPipe,
   ],
   imports: [
     BrowserModule,
@@ -55,10 +61,10 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule,
+    MatCardModule
 
   ],
-  providers: [],
+  providers: [{provide: MatPaginatorIntl, useClass: TradutorPaginator}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
