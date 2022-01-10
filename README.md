@@ -1,6 +1,8 @@
 # SistemaDePonto
-O projeto consiste em um sistema com 02 perfís, funcionário e administrador.<br/>
+O projeto consiste em um sistema com 02 perfis, funcionário e administrador.<br/>
+<br/>
 No perfíl de funcionário, ao efetuar o login, este usuário poderá realizar sua marcação de ponto onde será capturada sua GeoLocalização. Além da tela de lançamento dos horários de início de trabalho/almoço e término de trabalho/almoço, este perfíl possui acesso à um relatório com suas marcações.<br/>
+<br/>
 Já no perfíl de administrador do sistema, será apresentado um relatório de todas as marcações de todos os funcionário que estão sobre o guarda-chuva de sua empresa, assim como a possibilidade de edição, em caso de alguma marcação incorreta.
 
 ### Pontos importantes sobre o projeto:
