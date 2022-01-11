@@ -31,6 +31,12 @@ import { DataPipe } from './shared/data.pipe';
 import { CadastroComponent } from './admin/cadastro/cadastro.component';
 import { ListagemAdminComponent } from './admin/listagem-admin/listagem-admin.component';
 import { AtualizacaoComponent } from './admin/atualizacao/atualizacao.component';
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 
@@ -67,10 +73,18 @@ import { AtualizacaoComponent } from './admin/atualizacao/atualizacao.component'
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule
 
   ],
-  providers: [{provide: MatPaginatorIntl, useClass: TradutorPaginator}],
+  providers: [
+    {provide: MatPaginatorIntl, useClass: TradutorPaginator},
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

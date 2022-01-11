@@ -12,6 +12,18 @@ export interface lancamentoInfo {
   id?:string
 }
 
+export interface funcionarioInfo {
+  nome: string,
+  email: string,
+  cpf: string,
+  perfil: string,
+  valorHora?: string,
+  qtdHorasTrabalhoDia?: string,
+  qtdHorasAlmoco?: string,
+  lancamentos?: lancamentoInfo[],
+  id?: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +44,18 @@ export class LancamentoService {
     id:''
   }
 
+  funcionario: funcionarioInfo = {
+    nome: '',
+    email: '',
+    cpf: '',
+    perfil: '',
+    valorHora: '',
+    qtdHorasTrabalhoDia: '',
+    qtdHorasAlmoco: '',
+    lancamentos: [],
+    id: ''
+  }
+
   buscarUltimoTipoLancado(): Observable<any> {
     return this.http.get(env.baseApiUrl + this.PATH + this.PATH_ULTIMO_LANC.replace('{funcionarioId}', this.httpUtil.obterIdUsuario()), this.httpUtil.headers()
     );
@@ -43,5 +67,13 @@ export class LancamentoService {
 
   listarTodosLancamentos(): Observable<any>{
     return this.http.get(env.baseApiUrl + this.PATH + this.PATH_TODOS_LANC.replace('{funcionarioId}', this.httpUtil.obterIdUsuario()), this.httpUtil.headers());
+  }
+
+  listarLancamentoPorFuncionario(funcionarioId:string, pagina: number, ordem: string, direcao: string): Observable<any> {
+    const url: string = env.baseApiUrl + this.PATH + this.PATH_LANCAMENTOS.replace('{funcionarioId}', funcionarioId);
+
+    const params: string = '?pag=' + pagina + '&ord=' + ordem + '&dir=' + direcao;
+
+    return this.http.get(url + params, this.httpUtil.headers());
   }
 }
