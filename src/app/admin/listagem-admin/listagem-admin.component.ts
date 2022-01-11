@@ -44,7 +44,6 @@ export class ListagemAdminComponent implements OnInit {
     this.funcionarioId = '3';
 
     this.lancamentoService.listarLancamentoPorFuncionario(this.funcionarioId, this.pagina, this.ordem, this.direcao).subscribe(data => {
-      console.log(data);
       this.totalLancamentos = data.data.totalElements;
       const lancamentos: lancamentoInfo[] = data.data.content;
       this.dataSource = new MatTableDataSource<lancamentoInfo>(lancamentos);
