@@ -1,5 +1,57 @@
 form {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    align-items: center;
+    
+}
+
+img {
+    width: 50%;
+}
+
+.box {
+    border-radius: 61px;
+    background: #0741AD;
+    box-shadow:  28px 28px 56px #031e50,
+                -28px -28px 56px #0b64ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 40%;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0741AD;
+    height: 100vh;
+    margin: 0%;   
+    padding: 0%;
+}
+
+button {
+    margin-top: 5vh;
+    
+    color: white;
+    border-radius: 14px;
+    background: #0741AD;
+    box-shadow:  10px 10px 20px #031a45,
+                -10px -10px 20px #0b68ff;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.teste {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background: transparent;
+    width: 100%;
+    max-width: 100%;
 }
