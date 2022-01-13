@@ -4,16 +4,16 @@
         <form [formGroup]="form" novalidate>
             <mat-list>
                 <mat-list-item>
-                    <mat-form-field>
-                        <input matInput placeholder="Email" formControlName="email">
-                    </mat-form-field>
+                    <div>
+                        <input class="teste" placeholder="Email" [ngClass]="{'inputInvalido' : form.controls['email'].invalid && form.controls['email'].touched}"  formControlName="email">
+                    </div>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-form-field>
-                        <input type="password"  matInput placeholder="Senha" formControlName="senha">
-                    </mat-form-field>
+                    <div>
+                        <input type="password"  class="teste" [ngClass]="{'inputInvalido' : form.controls['senha'].invalid && form.controls['senha'].touched}" placeholder="Senha" formControlName="senha">
+                    </div>
                     <span matTooltip="A senha deve conter ao menos 6 caracteres.">
-                        <mat-icon style="color: white; font-size: 20px;">help</mat-icon>
+                        <mat-icon style="color: white; font-size: 20px; margin-left: 50%;">help</mat-icon>
                     </span>
                 </mat-list-item>
                 <mat-list-item fxLayoutAlign="center">

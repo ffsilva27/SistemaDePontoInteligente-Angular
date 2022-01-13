@@ -2,11 +2,11 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    width: 100%;
 }
 
 img {
-    width: 50%;
+    width: 45%;
 }
 
 .box {
@@ -19,7 +19,7 @@ img {
     justify-content: center;
     align-items: center;
     height: 60vh;
-    width: 40%;
+    width: 45%;
 }
 
 .login {
@@ -38,11 +38,12 @@ button {
     
     color: white;
     border-radius: 14px;
+    border-color: white;
     background: #0741AD;
     box-shadow:  10px 10px 20px #031a45,
                 -10px -10px 20px #0b68ff;
     height: 100%;
-    width: 100%;
+    width: 8vw;
     cursor: pointer;
 }
 
@@ -54,4 +55,16 @@ button {
     background: transparent;
     width: 100%;
     max-width: 100%;
+}
+
+.teste2 {
+    width: 90%;
+}
+
+.inputInvalido{
+    border-bottom: 2px solid red;
+}
+
+::placeholder {
+    color: white;
 }
