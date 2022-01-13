@@ -1,5 +1,15 @@
 <h2 fxLayoutAlign="center">Controle de Ponto - Admin</h2>
 
+<form [formGroup]="form" novalidate>
+  <mat-form-field>
+    <mat-select placeholder="Funcionários" formControlName="funcs" [(value)]="funcionarioId" (selectionChange)="exibirLancamentos()"> 
+      <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario.id">
+        {{ funcionario.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
 <a mat-button color="warn" 
   routerLink="/admin/cadastro"
   *ngIf="funcionarioId">
@@ -52,7 +62,7 @@
       <mat-cell *matCellDef="let lancamento">
         <a routerLink="{{ '/admin/atualizacao/' + lancamento.id }}"
           ><mat-icon matTooltip="Editar lançamento">create</mat-icon></a>
-        <a (click)="remover(lancamento.id)" 
+        <a (click)="removerDialog(lancamento.id)" 
           style="cursor: pointer"><mat-icon matTooltip="Remover lançamento">clear</mat-icon></a>
       </mat-cell>
     </ng-container>

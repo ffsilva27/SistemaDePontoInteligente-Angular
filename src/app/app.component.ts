@@ -12,10 +12,15 @@ export class AppComponent {
 
   sair() {
     delete localStorage['token'];
+    delete sessionStorage['funcionarioId'];
     this.router.navigate(['/']);
   }
 
   autenticado():boolean {
     return localStorage['token'];
+  }
+
+  entrar() {
+    this.router.navigate(['/'])
   }
 }
