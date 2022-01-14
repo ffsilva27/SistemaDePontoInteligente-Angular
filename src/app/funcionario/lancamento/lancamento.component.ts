@@ -18,6 +18,7 @@ declare var navigator: any;
   styleUrls: ['./lancamento.component.scss']
 })
 export class LancamentoComponent implements OnInit {
+  title:string = "Controle de Ponto";
 
   //A API recebe a data em inglês, por conta disso foi criado esse atributo.
   private dataAtualEn: string;

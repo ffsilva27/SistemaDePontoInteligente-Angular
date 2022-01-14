@@ -23,6 +23,7 @@ export class ListagemAdminComponent implements OnInit {
   colunas: string[] = ['data', 'tipo', 'localizacao', 'geoLocalizacao', 'acao'];
   funcionarioId: string;
   totalLancamentos: number;
+  title:string = "Controle de ponto - Admin";
 
   funcionarios: funcionarioInfo[];
   @ViewChild(MatSelect) matSelect: MatSelect;

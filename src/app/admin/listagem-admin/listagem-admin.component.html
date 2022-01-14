@@ -1,4 +1,4 @@
-<h2 fxLayoutAlign="center">Controle de Ponto - Admin</h2>
+<app-nav-bar [title]="title"></app-nav-bar>
 
 <form [formGroup]="form" novalidate>
   <mat-form-field>
@@ -75,5 +75,6 @@
 <mat-paginator 
   [length]="totalLancamentos"
   [pageSize]="25"
-  (page)="paginar($event)">
+  (page)="paginar($event)" style="margin-bottom: 5%;">
 </mat-paginator>
+<app-footer></app-footer>

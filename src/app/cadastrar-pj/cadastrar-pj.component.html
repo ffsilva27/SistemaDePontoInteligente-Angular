@@ -11,7 +11,7 @@
                     <mat-list>
                         <mat-list-item>
                             <div>
-                                <input [ngClass]="{'inputInvalido' : form.controls['cnpj'].invalid && form.controls['cnpj'].touched}" class="teste" placeholder="CNPJ" formControlName="cnpj" mascara="99.999.999/9999-99">
+                                <input [ngClass]="{'inputInvalido' : form.controls['cnpj'].invalid && form.controls['cnpj'].touched}" class="teste" placeholder="CNPJ" formControlName="cnpj" (keyup)="changeStatus('cnpj')" mascara="99.999.999/9999-99">
                             </div>
                         </mat-list-item>
                         <mat-list-item>
@@ -21,7 +21,7 @@
                         </mat-list-item>
                         <mat-list-item>
                             <div>
-                                <input [ngClass]="{'inputInvalido' : form.controls['cpf'].invalid && form.controls['cpf'].touched}" class="teste" placeholder="CPF" formControlName="cpf" mascara="999.999.999-99">
+                                <input [ngClass]="{'inputInvalido' : form.controls['cpf'].invalid && form.controls['cpf'].touched}" class="teste" placeholder="CPF" formControlName="cpf" mascara="999.999.999-99" (keyup)="changeStatus('cpf')">
                             </div>
                         </mat-list-item>
                         <mat-list-item>
@@ -52,4 +52,4 @@
         </div>
     </div>
 </div>
-
+<app-footer></app-footer>

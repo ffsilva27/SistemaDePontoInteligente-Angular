@@ -1,6 +1,6 @@
-<h2 fxLayoutAlign="center">Controle de Ponto</h2>
+<app-nav-bar [title]="title"></app-nav-bar>
 
-<div fxLayoutAlign="center">
+<div fxLayoutAlign="center" style="margin-bottom: 10%;">
     <mat-list>
       <mat-list-item fxLayoutAlign="center">
         <a mat-button color="warn" routerLink="/funcionario/listagem">
@@ -18,35 +18,35 @@
       </mat-list-item>
       <mat-list-item *ngIf="exibirInicioTrabalho()" 
           fxLayoutAlign="center">
-        <button mat-raised-button color="primary"
+        <button style="margin-top: 50%;" mat-raised-button color="primary"
             (click)="iniciarTrabalho()">
             Iniciar Trabalho
         </button>
       </mat-list-item>
       <mat-list-item *ngIf="exibirInicioAlmoco()" 
           fxLayoutAlign="center">
-        <button mat-raised-button color="primary"
+        <button style="margin-top: 50%;" mat-raised-button color="primary"
             (click)="iniciarAlmoco()">
             Iniciar Almoço
         </button>
       </mat-list-item>
       <mat-list-item *ngIf="exibirTerminoAlmoco()" 
           fxLayoutAlign="center">
-        <button mat-raised-button color="primary"
+        <button style="margin-top: 50%;" mat-raised-button color="primary"
             (click)="terminarAlmoco()">
             Terminar Almoço
         </button>
       </mat-list-item>
       <mat-list-item *ngIf="exibirTerminoTrabalho()" 
           fxLayoutAlign="center">
-        <button mat-raised-button color="primary"
+        <button style="margin-top: 50%;" mat-raised-button color="primary"
             (click)="terminarTrabalho()">
             Terminar Trabalho
         </button>
       </mat-list-item>
     </mat-list>
   </div>
-  
+  <app-footer></app-footer>
   
   
   

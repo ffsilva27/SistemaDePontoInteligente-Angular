@@ -16,6 +16,7 @@ import { LancamentoComponent } from '../lancamento/lancamento.component';
   styleUrls: ['./listagem.component.scss']
 })
 export class ListagemComponent implements OnInit {
+  title:string = "Controle de Ponto";
 
   dataSource: MatTableDataSource<lancamentoInfo>;
   colunas: string[] = ['data', 'tipo', 'localizacao', 'geoLocalizacao'];

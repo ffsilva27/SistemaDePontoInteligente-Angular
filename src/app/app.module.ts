@@ -38,6 +38,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { ConfirmarDialog } from './admin/listagem-admin/listagem-admin.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -56,6 +58,8 @@ import { ConfirmarDialog } from './admin/listagem-admin/listagem-admin.component
     ListagemAdminComponent,
     AtualizacaoComponent,
     ConfirmarDialog,
+    NavBarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

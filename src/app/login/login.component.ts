@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
 
   logar(){
     if(this.form.invalid){
+      Object.keys(this.form.controls).forEach(camps=>{
+        const camp = this.form.get(camps);
+        camp.markAllAsTouched();
+      })
       this.snackBar.open("Dados inválidos ou incompletos!", "Erro", {duration: 5000});
       return;
     }
@@ -43,7 +47,6 @@ export class LoginComponent implements OnInit {
       }
     },
     err=> {
-      console.log(JSON.stringify(err));
       let msg: string = "Tente novamente em instantes";
       if(err.status==401){
         msg = "Email/senha inválido(s)."

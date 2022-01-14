@@ -31,8 +31,17 @@ export class CadastrarPjComponent implements OnInit {
     });
   }
 
+  changeStatus(event:string){
+    const camp = this.form.controls[event];
+    camp.markAsUntouched();
+  }
+
   cadastrarPj(){
     if(this.form.invalid){
+      Object.keys(this.form.controls).forEach(camps=>{
+        const camp = this.form.get(camps);
+        camp.markAllAsTouched();
+      })
       this.snackBar.open("Dados inválidos ou incompletos!", "Erro",{duration:5000});
       return;
     }
