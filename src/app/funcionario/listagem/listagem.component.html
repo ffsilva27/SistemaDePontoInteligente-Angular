@@ -40,7 +40,7 @@
             Geo Localização
         </mat-header-cell>
         <mat-cell *matCellDef="let lancamento">
-            <a target="blank" [href]="obterUrlMapa(lancamento.localizacao)">
+            <a target="blank" [href]="obterUrlMapa(lancamento.localizacao)" *ngIf="lancamento.localizacao">
                 Abrir mapa
             </a>
         </mat-cell>
