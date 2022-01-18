@@ -80,4 +80,12 @@ export class LancamentoService {
   remover(lancamentoId:string):Observable<any> {
     return this.http.delete(env.baseApiUrl + this.PATH + '/' + lancamentoId, this.httpUtil.headers());
   }
+
+  buscarPorId(lancamentoId:string): Observable<any> {
+    return this.http.get(env.baseApiUrl + this.PATH + '/' + lancamentoId, this.httpUtil.headers());
+  }
+
+  atualizar(): Observable<any> {
+    return this.http.put(env.baseApiUrl + this.PATH + '/' + this.lancamento.id, this.lancamento ,this.httpUtil.headers());
+  }
 }

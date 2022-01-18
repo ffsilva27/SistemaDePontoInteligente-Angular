@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastrarPfComponent } from './cadastrar-pf/cadastrar-pf.component';
 import { ListagemComponent } from './funcionario/listagem/listagem.component';
 import { LancamentoComponent } from './funcionario/lancamento/lancamento.component';
+import { AdminGuard } from './shared/services/admin-guard.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,9 +17,9 @@ const routes: Routes = [
   {path:"cadastro-pf", component: CadastrarPfComponent},
   {path:"funcionario", component: LancamentoComponent},
   {path:"funcionario/listagem", component: ListagemComponent},
-  {path:"admin", component: ListagemAdminComponent},
-  {path:"admin/cadastro", component: CadastroComponent},
-  {path:"admin/atualizacao/:lancamentoId", component: AtualizacaoComponent}
+  {path:"admin", component: ListagemAdminComponent, canActivate:[AdminGuard]},
+  {path:"admin/cadastro", component: CadastroComponent, canActivate:[AdminGuard]},
+  {path:"admin/atualizacao/:lancamentoId", component: AtualizacaoComponent, canActivate:[AdminGuard]}
 ];
 
 @NgModule({
