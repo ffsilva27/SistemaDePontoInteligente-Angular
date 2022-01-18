@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido em Angular, portanto para execução realize os se
 ________________________________________________________________________________________________________________
 
 ### API utilizada no projeto
-A API utilizada no projeto encontra-se [aqui](https://github.com/m4rciosouza/ponto-inteligente-api-curso-angular-v2) e foi desenvolvida com Java e Spring Boot. Para execução do projeto, a API precisa estar rodando junto ao projeto, conforme segue:
+A API utilizada no projeto não foi desenvolvida por mim. A API encontra-se hospedada [aqui](https://github.com/m4rciosouza/ponto-inteligente-api-curso-angular-v2) e foi desenvolvida com Java e Spring Boot. Para execução do projeto, a API precisa estar rodando junto ao projeto, conforme segue:
 
 1. Realize o clone do repositório para sua máquina;
 * `git clone url-api`
