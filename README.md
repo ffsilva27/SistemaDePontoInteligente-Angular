@@ -10,6 +10,7 @@ Já no perfíl de administrador do sistema, será apresentado um relatório de t
 * Foram criados validadores personalizados para CPF e CNPJ;
 * Trabalhamos com GeoLocalização junto ao registro das marcações;
 * Trabalhamos com paginação (*lazy loading* para o relatório de lançamentos no perfil de administrador e *eager loading* para o relatório de lançamentos no perfíl de funcionário) e ordenação nos relatórios de lançamento;
+* Utilizamos protetor de rotas com a finalidade de impedir que o perfíl de funcionário tivesse acesso as funcionalidades do perfíl de administrador;
 * Utilizamos pipes para uma melhor visualização das datas/horas e tipos de lançamento, tendo em vista a formatação utilizada na API.
 * Foi utilizado Angular Material em alguns recursos do projeto;
 * Trabalhamos com decode do Base64;
