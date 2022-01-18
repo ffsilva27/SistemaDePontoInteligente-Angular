@@ -18,6 +18,12 @@ Já no perfil de administrador do sistema, será apresentado um relatório de to
 
 __________________________________________________________________________________________________________
 
+[![Vídeo de utilização do site](/Capturar.PNG)](https://youtu.be/JegAVyZ7MGU)
+
+### Obs.: Clicando na imagem você será direcionado para assistir o projeto funcionando.
+
+__________________________________________________________________________________________________________
+
 ### Angular CLI - version 13.0.0
 Esse projeto foi desenvolvido em Angular, portanto para execução realize os seguintes passos:
 
